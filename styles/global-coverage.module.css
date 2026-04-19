@@ -1,0 +1,454 @@
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.header {
+  background: linear-gradient(135deg, #185FA5 0%, #0c447c 100%);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+/* Critical Insight */
+.criticalInsight {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.insightBox {
+  background: white;
+  border-left: 4px solid #ef4444;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.insightBox h2 {
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.claim,
+.reality,
+.conclusion {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.claim strong,
+.reality strong,
+.conclusion strong {
+  color: #1a1a1a;
+}
+
+.reality {
+  color: #10b981;
+}
+
+.conclusion {
+  color: #185FA5;
+}
+
+/* Summary Cards */
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-left: 4px solid;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.cardActive {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  margin-bottom: 1rem;
+}
+
+.layerName {
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.cardMetrics {
+  display: flex;
+  gap: 1rem;
+}
+
+.metric {
+  flex: 1;
+}
+
+.label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #185FA5;
+}
+
+/* Layer Details */
+.layerDetails {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+/* Matrix Section */
+.matrixSection {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.matrixSection h2 {
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+/* Regions Section */
+.regionsSection {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.regionsSection h2 {
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.layersContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.layerGroup {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.layerHeader {
+  padding: 1.5rem;
+  border-left: 4px solid;
+  background: #f9f9f9;
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+}
+
+.regionsList {
+  padding: 1rem;
+}
+
+.regionItem {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.regionItem:last-child {
+  border-bottom: none;
+}
+
+.regionItem:hover {
+  background: #f9f9f9;
+}
+
+.regionName {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.regionMetrics {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.population {
+  background: #e6f1fb;
+  color: #185FA5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.webAccess {
+  color: #666;
+}
+
+/* Care Section */
+.careSection {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.careSection h2 {
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.careGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.careCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.careCard h3 {
+  margin-bottom: 1rem;
+  color: #185FA5;
+}
+
+.careDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.careDetail p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.careDetail strong {
+  color: #1a1a1a;
+}
+
+.compatibility {
+  margin-top: 0.5rem;
+}
+
+.full,
+.partial,
+.requires_redesign,
+.incompatible {
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.full {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.partial {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.requires_redesign {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+.incompatible {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Roadmap Section */
+.roadmapSection {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.roadmapSection h2 {
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.roadmapGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.roadmapCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #185FA5;
+}
+
+.roadmapCard h3 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.roadmapContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.statusBadge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-block;
+  width: fit-content;
+}
+
+.statusBadge[data-status="FULL"] {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.statusBadge[data-status="PARTIAL"] {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.statusBadge[data-status="REQUIRES_REDESIGN"] {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+.statusBadge[data-status="INCOMPATIBLE"] {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.roadmapCard p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.actionItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.action {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer a {
+  color: #66b3ff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 2rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .summaryCards {
+    padding: 0 1rem;
+  }
+
+  .layersContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .careGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmapGrid {
+    grid-template-columns: 1fr;
+  }
+}

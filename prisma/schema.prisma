@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Region {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  iso3          String?  @unique
+  continent     String
+  layer         Int      // 1, 2, 3, or 4
+  population    BigInt
+  webAccess     Float    // percentage 0-100
+  mobileAccess  Float    // percentage 0-100
+  
+  careDefinition CareDefinition?
+  statistics     RegionStatistic[]
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model CareDefinition {
+  id            String   @id @default(cuid())
+  regionId      String   @unique
+  region        Region   @relation(fields: [regionId], references: [id], onDelete: Cascade)
+  
+  // Care definition in JSON format for flexibility
+  definition    String   // Japanese + English
+  keyValues     String[] // e.g., ["family", "collective", "elder_consensus"]
+  tokenModel    String   // e.g., "individual_scoring", "family_collective", "community_dao"
+  governance    String   // e.g., "hierarchical", "consensus", "elder_council"
+  
+  haisCompatibility  String // "FULL", "PARTIAL", "REQUIRES_REDESIGN", "INCOMPATIBLE"
+  notes         String?
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model RegionStatistic {
+  id            String   @id @default(cuid())
+  regionId      String
+  region        Region   @relation(fields: [regionId], references: [id], onDelete: Cascade)
+  
+  year          Int
+  population    BigInt
+  webNative     BigInt
+  mobileHybrid  BigInt
+  accessSparse  BigInt
+  offline       BigInt
+  
+  @@unique([regionId, year])
+}
+
+model PopulationLayer {
+  id            String   @id @default(cuid())
+  layer         Int      @unique // 1-4
+  name          String   // "Web-native", "Mobile hybrid", etc.
+  description   String
+  population    BigInt
+  percentage    Float
+  color         String   // Hex color for visualization
+  
+  characteristics String[] // Array of defining features
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model CareModel {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  description   String
+  regions       String[] // Array of region IDs
+  
+  // Technical specs
+  tokenMechanic String
+  governance    String
+  dataOwnership String
+  
+  haisComponents String[] // Which HAIS features work with this model
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
